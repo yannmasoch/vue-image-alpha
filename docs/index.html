@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+    <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
+    
+    <title>vue-image-alpha</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+    <script src="js/imageAlpha.umd.min.js"></script>
+    <script src="js/prism.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="css/prism.css" rel="stylesheet" />
+    
+    <style>
+      body {
+        margin: 0;
+        /* background: #455A64; */
+      }
+
+      h1, h2, h3, h4, strong {
+        color: #333;
+      }
+      
+      /* strong {
+        padding: 2px 6px;
+        color: #333;
+        background: #BBB;
+        border-radius: 4px;
+      } 
+      */
+      header {
+        padding: 50px 20px;
+        text-align: center;
+        background: #455A64;
+      }
+      
+      header h1 {
+        margin: 20px;
+        color: #eee;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 30pt;  
+        font-weight: 100;
+      }
+
+      header img.vue-logo {
+        margin: 20px;
+        width: 100px;
+      }
+
+      section.intro {
+        /* margin: 0;
+        padding: 0; */
+        background: #455A64;
+        text-align: center;
+      }
+
+      section.intro h1 {
+        margin: 20px;
+        padding: 20px;
+        display: block;
+        color: #eee;
+      
+      }
+      section.demo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        /* justify-items: center; */
+        justify-content: center;
+        padding: 50px;
+        height: 800px;
+        background: url('./img/bg-Checker.png');
+        background-repeat: repeat;
+        background-size: 150px;
+        /* background: #455A64; */
+        /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
+        /* border: 1px solid red; */
+      }
+      
+      section.demo img.big {
+        z-index: 10;
+        height: 90%;
+      }
+
+      section.demo div.bg{
+        position: absolute;
+        top: -2px; /* to remove white space between header and this element */
+        left: 0;
+        height: 100%;
+        width: 100%;
+        content: "";
+        background: #455A64;
+        /* transform: rotate(-10deg) skewX(-10deg); */
+        /* transform: skewY(-10deg); */
+        clip-path: polygon(0 0, 100% 0, 100% 25%, 0 75%);
+        /* z-index: 1; */
+      }
+      section.demo #app{
+        /* z-index: 10; */
+      }
+
+      div.container {
+        /* border: 1px solid red; */
+      }
+
+      section.details {
+        margin: 0;
+        padding: 40px 0;
+        /* height: 800px; */
+        background: #eee;
+        /* clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); */
+      }
+
+      code.terminal {
+        margin: 20px 0;
+        display: block;
+        padding: 18px 24px;
+        background: #2a3134;
+        color: #81D4FA;
+        font-weight: 100;
+        border-radius: 8px;
+        /* font-family: monospace; */
+        white-space: pre;
+
+      }
+      code.terminal:before {
+        margin-right: 12px;
+        content: "$";
+        color: #607D8B;
+
+      }
+      
+      pre {
+        margin: 20px 0 !important;
+        display: block;
+        padding: 18px 24px 18px 42px !important;
+        background: #2a3134 !important;
+        /* color: #2a3134; */
+        font-weight: 100;
+        border-radius: 8px;
+        /* font-family: monospace; */
+        /* white-space: pre; */
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>
+      <strong>We're sorry but image-alpha doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+
+    <header class="intro">
+      <img class="vue-logo" src="./img/Vue.js_Logo_2.svg" />
+      <h1>vue-image-alpha</h1>
+    </header>
+
+    <section id="app" class="demo">
+      <div class="bg"></div>
+      <img-alpha class="big" src="./img/mario.jpg" src-alpha="./img/mario-alpha.jpg" />
+    </section>
+
+    <section class="details container-fluid">
+      <div class="container">
+        <h3>This is the details part</h3>
+        <code class="terminal">npm install --save vue-image-alpha</code>
+        <p>sdcsdcsdca scsdfv <strong>bfgb</strong> fxgvb szdf v </p>
+
+        <pre><code class="language-javascript">
+import ImgAlpha from 'vue-image-alpha'
+...
+
+export default {
+  name: 'MyApp',
+  components: {
+    ImgAlpha,
+    ...
+  },
+  ...
+},
+      </pre></code>
+
+
+      </div>
+    </section>
+    
+    <script>
+
+        // new Vue({
+        //   components: {
+        //     demo: vue-image-alpha
+        //   }
+        // }).$mount('#app')
+
+        // import ImgAlpha from './js/vue-image-alpha.umd.js'
+
+        var app = new Vue({
+          el: '#app',
+          data: {
+           message: 'vue-image-alpha'
+          },
+          components: {
+            imgAlpha: imageAlpha
+          }
+        })
+
+  </script>
+
+</body>  
+</html>
