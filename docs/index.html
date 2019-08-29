@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+    <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
+    
+    <title>vue-image-alpha</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+    <script src="js/imageAlpha.umd.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/displace.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="css/prism.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+  </head>
+
+  <body>
+    <noscript>
+      <strong>We're sorry but image-alpha doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+
+    <!-- <img class="vue-logo" src="./img/Vue.js_Logo_2.svg" /> -->
+    
+    <section class="top">
+
+      <header>
+        <h1>vue-image-alpha</h1>
+        <p>vue-image-alpha is a Vue component allowing to use light-weight transparent images on a website</p>
+        <div class="links">
+          <a href="https://github.com/yannmasoch/vue-image-alpha" target="_blank"><img class="github" src="./img/Logo-GitHub.svg"></i>Source on GitHub</a>
+          <a href="https://www.npmjs.com/package/vue-image-alpha" target="_blank"><img class="npm" src="./img/Logo-Npm.svg"></i>Package on NPM</a>
+        </div>
+      </header>
+
+      <div id="app" class="demo">
+        <div class="bg"></div>
+        <img-alpha class="big displacable" src="./img/mario.jpg" src-alpha="./img/mario-alpha.jpg" />
+      </div>
+
+    </section>
+
+    <section class="details container-fluid">
+
+        <article>
+          <h2>vue-image-alpha</h2>
+          <p>
+            <strong>vue-image-alpha</strong> is a Vue component allowing to use light-weight transparent images on a
+            website.
+          </p>
+          <p>
+            It is a remastered version of <a href="https://github.com/yannmasoch/imgAlpha.js" target="_blank">imgAlpha.js</a> I ceated a few years ago. This Vue version has a more efficient
+            code and a faster image processing running in the background using Web Workers and buffer images.
+          </p>
+          <img src="img/Intro.jpg" />
+        </article>
+
+        <article>
+          <h2>How it Works</h2>
+          <p>
+            <strong>vue-image-alpha</strong> uses 2 compressed images such as jpeg format to build a light-weight transparent image. No more ugly GIF and no more heavy PNG!!
+          </p>
+          <p>
+              Simply save your image in 2 regular jpeg files:
+          </p>
+          <ul>
+            <li>The color image (on a plain color background)</li>
+            <li>The alpha image (black is transparent and white is opaque)</li>
+          </ul>
+          <img src="img/How-it-Works.jpg" />
+        </article>
+
+        <article>
+          <h2>Installation</h2>
+          <p>
+            <strong>vue-image-alpha</strong> is a <strong>Vue component</strong> that can be installed as dependency in you <strong>Vue CLI</strong> project.
+          </p>
+          <p>
+            The easiest way to install it is using NPM:
+          </p>
+          <code class="terminal">npm install --save vue-image-alpha</code>
+        </article>
+
+        <article>
+          <h2>Usage</h2>
+
+          <h3>Component Initialization</h3>
+          <p>
+            All you need to do is to import <strong>vue-alpha-image</strong> in your Vue code
+          </p>
+          <pre><code class="language-javascript">
+import ImgAlpha from 'vue-image-alpha'
+...
+
+export default {
+  name: 'MyApp',
+  components: {
+    ImgAlpha,
+    ...
+  },
+  ...
+},
+        </pre></code>
+
+        <h3>Component Use</h3>
+          <p>
+            Use the component in your <strong>html</strong> or <strong>template</strong> code
+          </p>
+          <pre><code class="language-javascript">
+&lt;img-alpha src="/path/to/myImage.jpg" src-alpha="/path/to/myImage-alpha.jpg" bg-color="#FFFFFF"&gt;&lt;/img-alpha&gt;
+          </pre></code>
+
+          <p>
+            or with data binding
+          </p>
+          <pre><code class="language-javascript">
+&lt;img-alpha :src="require('/path/to/myImage.jpg')" :src-alpha="require('/path/to/myImage-alpha.jpg')" bg-color="#FFFFFF"&gt;&lt;/img-alpha&gt;
+          </pre></code>
+
+      </article>
+
+      <article>
+
+        <h2>Props</h2>
+
+        <table>
+          <tr>
+            <th>Attribute</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td><strong>src</strong></td>
+            <td>string</td>
+            <td>null</td>
+            <td>Color image URL</td>
+          </tr>
+          <tr>
+            <td><strong>src-alpha</strong></td>
+            <td>string</td>
+            <td>null</td>
+            <td>Alpha image URL</td>
+          </tr>
+          <tr>
+            <td><strong>bg-color</strong></td>
+            <td>string</td>
+            <td>#FFFFFF</td>
+            <td>background color of the src image (optional)</td>
+          </tr>
+        </table>
+
+        <h4>src</h4>
+        <p>
+          The <strong>src</strong> defines the color image source.
+        </p>
+
+        <h4>src-alpha</h4>
+        <p>
+          The <strong>src-alpha</strong> defines the alpha image used to make the color image transparent.
+        </p>
+        <p>
+          If the alpha image is not provided, the image transparency processing will be skipped and the image will be displayed as a regular image.
+        </p>
+
+        <h4>bg-color (optional)</h4>
+        <p>
+          The <strong>bg-color</strong> defines the background color of the color image.
+        </p>
+        <p>
+          By default, the <strong>bg-color</strong> is white (#FFFFFF)
+        </p>
+        <p>
+          This prop is used to provide a better alpha blending accuracy if you use a background color in the color image different than white.
+        </p>
+
+      </article>
+
+      <article>
+        <h2>License</h2>
+        <p>MIT License</p>
+        <p>Copyright (c) 2019 Yann Masoch</p>
+        <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+        <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+        <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </article>
+
+    </section>
+    
+    <footer>
+      Developed and maintained by <a href="http://www.yannmasoch.com" target="_blank">Yann Masoch</a> under the <a href="https://github.com/yannmasoch/vue-image-alpha/blob/master/LICENSE" target="_blank">MIT license</a>.
+    </footer>
+
+    <script>
+
+        // new Vue({
+        //   components: {
+        //     demo: vue-image-alpha
+        //   }
+        // }).$mount('#app')
+
+        // import ImgAlpha from './js/vue-image-alpha.umd.js'
+
+        var app = new Vue({
+          el: '#app',
+          data: {
+           message: 'vue-image-alpha'
+          },
+          components: {
+            imgAlpha: imageAlpha
+          }
+        })
+        
+        const element = document.querySelector('.displacable')
+        const options = {
+          // constrain: true,
+          // relativeTo: document.querySelector('.top')
+        };
+        window.displacejs(element, options)
+
+  </script>
+
+</body>  
+</html>

@@ -23,7 +23,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build-bundle": "vue-cli-service build --target lib --name vue-image-alpha ./src/ImgAlpha.vue",
+    "build-bundle": "vue-cli-service build --target lib --name imageAlpha ./src/ImgAlpha.vue",
     "lint": "vue-cli-service lint"
   },
   "files": [

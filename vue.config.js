@@ -1,6 +1,6 @@
 module.exports = {
     pages: {
-        index: './example/main.js'
+        index: './docs/main.js'
     },
     css: {
         extract: false

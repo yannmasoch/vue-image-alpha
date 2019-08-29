@@ -5,24 +5,112 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>image-alpha</title>
+    
+    <title>vue-image-alpha</title>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../docs/js/prism.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="../docs/css/prism.css" rel="stylesheet" />
+
     <style>
       body {
         margin: 0;
+      }
+
+      h1, h2, h3, h4, strong {
+        color: #333;
+      }
+      
+      /* strong {
+        padding: 2px 6px;
+        color: #333;
+        background: #BBB;
+        border-radius: 4px;
+      } 
+      */
+
+      section.intro {
+        margin: 0;
+        padding: 0;
+        /* height: 800px; */
+        background: #455A64;
+        /* clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); */
+      }
+
+      section.demo {
+        position: relative;
+        display: block;
+        padding: 50px;
+
+        /* height: 800px; */
         background: url('Bg-Checker.png');
         background-repeat: repeat;
         background-size: 150px;
         /* background: #455A64; */
+        /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
+        /* border: 1px solid red; */
       }
-      div.aa {
+
+      section.demo div.bg{
         position: absolute;
-        top: -550px;
-        left: -50%;
-        height: 1000px;
-        width: 200%;
+        top: 0px;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        content: "";
         background: #455A64;
-        transform: rotate(-20deg);
-        z-index: -100;
+        /* transform: rotate(-10deg) skewX(-10deg); */
+        /* transform: skewY(-10deg); */
+        clip-path: polygon(0 0, 100% 0, 100% 25%, 0 50%);
+        /* z-index: 1; */
+      }
+      section.demo #app{
+        /* z-index: 10; */
+      }
+
+      div.container {
+        /* border: 1px solid red; */
+      }
+
+      section.details {
+        margin: 0;
+        padding: 40px 0;
+        /* height: 800px; */
+        background: #eee;
+        /* clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); */
+      }
+
+      code.terminal {
+        margin: 20px 0;
+        display: block;
+        padding: 18px 24px;
+        background: #2a3134;
+        color: #81D4FA;
+        font-weight: 100;
+        border-radius: 8px;
+        /* font-family: monospace; */
+        white-space: pre;
+
+      }
+      code.terminal:before {
+        margin-right: 12px;
+        content: "$";
+        color: #607D8B;
+
+      }
+      code.code {
+        margin: 20px 0;
+        display: block;
+        padding: 18px 24px 18px 42px;
+        background: #CFD8DC;
+        color: #2a3134;
+        font-weight: 100;
+        border-radius: 8px;
+        /* font-family: monospace; */
+        white-space: pre;
+
       }
     </style>
   </head>
@@ -30,8 +118,43 @@
     <noscript>
       <strong>We're sorry but image-alpha doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div class="aa">zz</div>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+    <div class="container">
+dffd
+    </div>
+
+    <section class="intro">
+
+      <h1>vue-image-alpha</h1>
+
+      <pre><code class="language-javascript">p { color: red }</code></pre>
+    </section>
+
+    <section class="demo">
+      <div class="bg"></div>
+      <div id="app"></div>
+      demo
+    </section>
+
+    <section class="details container-fluid">
+      <div class="container">
+        <h3>This is the details part</h3>
+        <code class="terminal">npm install --save vue-image-alpha</code>
+        <p>sdcsdcsdca scsdfv <strong>bfgb</strong> fxgvb szdf v </p>
+<code class="code">import ImgAlpha from 'vue-image-alpha'
+...
+  
+export default {
+    name: 'MyApp',
+    components: {
+        ImgAlpha,
+        ...
+    },
+    ...
+},
+</code>
+      </div>
+    </section>
+
+    
 </html>
