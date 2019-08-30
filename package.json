@@ -1,6 +1,6 @@
 {
   "name": "vue-image-alpha",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "vue-image-alpha is a Vue component allowing to use light-weight transparent images on a website.",
   "keywords": [
     "vue",
@@ -72,6 +72,6 @@
   "author": "Yann Masoch <me@yannmasoch.com> (http://www.yannmasoch.com)",
   "repository": "github:yannmasoch/vue-image-alpha",
   "bugs": "https://github.com/yannmasoch/vue-image-alpha/issues",
-  "homepage": "https://github.com/yannmasoch/vue-image-alpha",
+  "homepage": "https://yannmasoch.github.io/vue-image-alpha/",
   "license": "MIT"
 }
